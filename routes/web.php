@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/connections', 'FriendsController@index')->name('friends');
 Route::get('/messages', 'MessagesController@index')->name('messages');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
