@@ -14,12 +14,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // return view('home');
+
+    $user = factory(\App\User::class)->create();
+    $post = new App\Post([
+        'title' => 'Title here',
+        'body' => 'body here',
+        'user_id' => $user->id,
+    ]);
+
+    $post->save();
+
+    dd($post);
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/connections', 'FriendsController@index')->name('friends');
 Route::get('/messages', 'MessagesController@index')->name('messages');
+Route::get('/profile', 'ProfileController@index')->name('profile');
+
+Auth::routes();
+
+Route::resource('posts', 'PostsController');
 
 Auth::routes();
 

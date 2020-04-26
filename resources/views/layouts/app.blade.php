@@ -33,6 +33,24 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#home"><i class="fa fa-home fa-2x" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#home"><i class="fa fa-user fa-2x" aria-hidden="true"></i>Profile</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa fa-folder-open fa-2x" aria-hidden="true"></i>New Post</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/messages"><i class="fa fa-comments fa-2x" aria-hidden="true"></i>Messages</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"><i class="fa fa-bell fa-2x" aria-hidden="true"></i>Notifications</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/connections"><i class="fa fa-handshake-o fa-2x" aria-hidden="true"></i>Connections</a>
+                        </li>
 
                     </ul>
 
