@@ -84,6 +84,11 @@
                     Laravel
                 </div>
 
+                <div class="row">
+                    <span>User: {{$user-name}}</span>
+                    <span>Following: {{$user->following->count()}}</span>
+                    <span>Followers: {{$user->followers->count()}}</span>
+                </div>
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>
                     <a href="https://laracasts.com">Laracasts</a>

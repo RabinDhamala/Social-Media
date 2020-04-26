@@ -16,8 +16,14 @@
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="../css/style.css">
+
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <!-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> -->
 </head>
 <body>
     <div id="app">
@@ -37,19 +43,19 @@
                             <a class="nav-link" href="#home"><i class="fa fa-home fa-2x" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#home"><i class="fa fa-user fa-2x" aria-hidden="true"></i>Profile</a>
+                            <a class="nav-link" href="{{route('profile')}}"><i class="fa fa-user fa-2x" aria-hidden="true"></i>Profile</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa fa-folder-open fa-2x" aria-hidden="true"></i>New Post</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/messages"><i class="fa fa-comments fa-2x" aria-hidden="true"></i>Messages</a>
+                            <a class="nav-link" href="{{route('messages')}}"><i class="fa fa-comments fa-2x" aria-hidden="true"></i>Messages</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa fa-bell fa-2x" aria-hidden="true"></i>Notifications</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="/connections"><i class="fa fa-handshake-o fa-2x" aria-hidden="true"></i>Connections</a>
+                            <a class="nav-link" href="{{route('friends')}}"><i class="fa fa-handshake-o fa-2x" aria-hidden="true"></i>Connections</a>
                         </li>
 
                     </ul>
