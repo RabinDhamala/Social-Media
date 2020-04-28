@@ -29,9 +29,11 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                <a class="navbar-brand" href="{{ route('home') }}">
+                    <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
+                    <!-- {{ config('app.name', 'Laravel') }} -->
                 </a>
+                <span>ChintaHaram</span>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -40,22 +42,22 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#home"><i class="fa fa-home fa-2x" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{route('home')}}"><i class="fa fa-home fa-2x" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('profile')}}"><i class="fa fa-user fa-2x" aria-hidden="true"></i>Profile</a>
+                            <a class="nav-link" href="{{route('profile.index')}}"><i class="fa fa-user fa-2x" aria-hidden="true"></i>Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-folder-open fa-2x" aria-hidden="true"></i>New Post</a>
+                            <a class="nav-link" href="{{route('post.create')}}"><i class="fa fa-folder-open fa-2x" aria-hidden="true"></i>New Post</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('messages')}}"><i class="fa fa-comments fa-2x" aria-hidden="true"></i>Messages</a>
+                            <a class="nav-link" href="{{route('messages.index')}}"><i class="fa fa-comments fa-2x" aria-hidden="true"></i>Messages</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa fa-bell fa-2x" aria-hidden="true"></i>Notifications</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('friends')}}"><i class="fa fa-handshake-o fa-2x" aria-hidden="true"></i>Connections</a>
+                            <a class="nav-link" href="{{route('connections.index')}}"><i class="fa fa-handshake-o fa-2x" aria-hidden="true"></i>Connections</a>
                         </li>
 
                     </ul>
@@ -75,7 +77,7 @@
                         @else
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                    {{ Auth::user()->username }} <span class="caret"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">

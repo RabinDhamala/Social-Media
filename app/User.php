@@ -23,13 +23,7 @@ class User extends Authenticatable
     //     return $this->hasMany(\App\Post::class);
     // }
 
-    public function followers(){
-        return $this->hasMany(Follower::class, 'user_id');
-    }
-
-    public function following(){
-        return $this->hasMany(Follower::class, 'follower_id');
-    }
+    
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -47,4 +41,26 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function followers(){
+        return $this->hasMany(Follower::class, 'user_id');
+    }
+
+    public function following(){
+        return $this->hasMany(Follower::class, 'follower_id');
+    }
+
+    public function posts(){
+        // return $this->hasMany(Post::class, 'user_id');
+        return $this->hasMany(Post::class);
+    }   
+
+    public function profile(){
+        return $this->hasOne(Profile::class);
+    }
+
+    public function follows(){
+        return Followers::where('user_id', $user->id)->where('follower_id', auth()->user()->id)->first() ? true : false;
+    }
+
 }

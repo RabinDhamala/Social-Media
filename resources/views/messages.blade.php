@@ -35,22 +35,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="/home"><i class="fa fa-home fa-2x" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{route('home')}}"><i class="fa fa-home fa-2x" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('profile')}}"><i class="fa fa-user fa-2x" aria-hidden="true"></i>Profile</a>
+                            <a class="nav-link" href="{{route('profile.index')}}"><i class="fa fa-user fa-2x" aria-hidden="true"></i>Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-folder-open fa-2x" aria-hidden="true"></i>New Post</a>
+                            <a class="nav-link" href="{{route('post.create')}}"><i class="fa fa-folder-open fa-2x" aria-hidden="true"></i>New Post</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('messages')}}"><i class="fa fa-comments fa-2x" aria-hidden="true"></i>Messages</a>
+                            <a class="nav-link" href="{{route('messages.index')}}"><i class="fa fa-comments fa-2x" aria-hidden="true"></i>Messages</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa fa-bell fa-2x" aria-hidden="true"></i>Notifications</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('friends')}}"><i class="fa fa-handshake-o fa-2x" aria-hidden="true"></i>Connections</a>
+                            <a class="nav-link" href="{{route('connections.index')}}"><i class="fa fa-handshake-o fa-2x" aria-hidden="true"></i>Connections</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">

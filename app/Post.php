@@ -3,24 +3,25 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
+use App\Comment;
+use App\Reaction;
 
 class Post extends Model
 {
     //
-    protected $fillable = [
-        'title', 'body',
-    ];
+    protected $guarded = [];
     //Or protected $guarded = [];
 
     public function user(){
-        return $this->belongsTo(\App\User::class);
+        return $this->belongsTo(User::class);
     }
 
-    public function comments(){
-        return $this->hasMany(App\Comment::class);
-    }
+    // public function comments(){
+    //     return $this->hasMany(Comment::class);
+    // }
 
-    public function reactions(){
-        return $this->hasMany(App\Reaction::class);
-    }
+    // public function reactions(){
+    //     return $this->hasMany(Reaction::class);
+    // }
 }

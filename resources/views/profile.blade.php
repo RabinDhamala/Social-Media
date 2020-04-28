@@ -23,7 +23,7 @@
         <header>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="d-flex flex-column align-items-center">
-                    <a class="navbar-brand" href="welcome.blade.php">
+                    <a class="navbar-brand" href="{{route('home')}}">
                         <i class="fa fa-instagram fa-3x" aria-hidden="true"></i>
                     </a>
                     <h3>ChintaHaram</h3>
@@ -35,22 +35,22 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="/home"><i class="fa fa-home fa-2x" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" href="{{route('home')}}"><i class="fa fa-home fa-2x" aria-hidden="true"></i>Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('profile')}}"><i class="fa fa-user fa-2x" aria-hidden="true"></i>Profile</a>
+                            <a class="nav-link" href="{{route('profile.index')}}"><i class="fa fa-user fa-2x" aria-hidden="true"></i>Profile</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class="fa fa-folder-open fa-2x" aria-hidden="true"></i>New Post</a>
+                            <a class="nav-link" href="{{route('post.create')}}"><i class="fa fa-folder-open fa-2x" aria-hidden="true"></i>New Post</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('messages')}}"><i class="fa fa-comments fa-2x" aria-hidden="true"></i>Messages</a>
+                            <a class="nav-link" href="{{route('messages.index')}}"><i class="fa fa-comments fa-2x" aria-hidden="true"></i>Messages</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#"><i class="fa fa-bell fa-2x" aria-hidden="true"></i>Notifications</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('friends')}}"><i class="fa fa-handshake-o fa-2x" aria-hidden="true"></i>Connections</a>
+                            <a class="nav-link" href="{{route('connections.index')}}"><i class="fa fa-handshake-o fa-2x" aria-hidden="true"></i>Connections</a>
                         </li>
                     </ul>
                     <form class="form-inline my-2 my-lg-0">
@@ -73,7 +73,9 @@
                 <div class="text-center">
                     <img src="../image/MYpic.jpg" class="rounded-circle w-50" alt="">
                 </div>
-                <h1 class="text-white" style="text-align: center">Rabin Dhamala</h1>
+                <h1 class="text-white" style="text-align: center">{{$user->username}}</h1>
+                <p class="text-center">{{$user->email}}</p>
+                <p class="text-center">Bio description</p>
                 <div class="d-flex">
                     <div class="pl-4"><strong>109</strong> Posts</div>
                     <div class="pl-4"><strong>144K</strong> Followers</div>

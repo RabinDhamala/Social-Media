@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class FriendsController extends Controller
+class ConnectionsController extends Controller
 {
     //
     public function __construct(){
@@ -12,6 +12,6 @@ class FriendsController extends Controller
     }
     
     public function index(){
-        return view('friends');
+        return view('mainPages.connections');
     }
 }

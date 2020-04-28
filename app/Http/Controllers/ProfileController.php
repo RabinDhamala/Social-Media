@@ -3,15 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
 
 class ProfileController extends Controller
 {
     //
-    public function __construct(){
-        $this->middleware('auth');
-    }
+    // public function index($user){
+    //    dd($user);
+    //    return view('profile');
+    // }
 
     public function index(){
-        return view('profile');
+        $user = auth()->user();
+        return view('profile')->with('user', $user);
+    }
+
+    public function show($user){
+        $user = User::find($user);
+        return view('redirected', [
+            'user' => "$user",
+        ]);
     }
 }

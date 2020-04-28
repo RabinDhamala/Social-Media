@@ -13,30 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('home');
-
-//     $user = factory(\App\User::class)->create();
-//     $post = new App\Post([
-//         'title' => 'Title here',
-//         'body' => 'body here',
-//         'user_id' => $user->id,
-//     ]);
-
-//     $post->save();
-
-//     dd($post);
-// });
-
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/connections', 'FriendsController@index')->name('friends');
-Route::get('/messages', 'MessagesController@index')->name('messages');
-Route::get('/profile', 'ProfileController@index')->name('profile');
+// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/connections', 'ConnectionsController@index')->name('connections.index');
+Route::get('/messages', 'MessagesController@index')->name('messages.index');
+Route::get('/profile', 'ProfileController@index')->name('profile.index')->middleware('auth');
+Route::get('/profile/{user}', 'ProfileController@show')->name('profile.show');
+Route::post('/follow', 'FollowController@follow')->name('follow');
+Route::post('/unfollow', 'FollowController@unfollow')->name('unfollow');
+
+Route::get('/p/create', 'PostsController@create')->name('post.create')->middleware('auth');
+Route::post('/p', 'PostsController@store');
+
+Route::get('/users/list', 'IndexController2@users');
 
 Auth::routes();
 
-Route::resource('posts', 'PostsController');
 
-Auth::routes();
-
-Route::get('/{username}', 'IndexController@show');
+Route::get('/welcome', 'IndexController@index')->middleware('auth');
+Route::get('/welcome/{username}', 'IndexController@show');

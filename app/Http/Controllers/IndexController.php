@@ -6,18 +6,33 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    //
-    public function show($username) {
-        $user = \App\User::with('following', 'followers')->where('username', $username)->first();
+    public function index() {
 
-        if(!user) {
-            return response('User not found', 404);
-        }
-    
+        $user =  \App\User::with('following', 'followers')->find(1);
+        
         $followers = $user->followers;
         $following = $user->following;
-    
-        return view('welcome')->with(['user'=>$user]);
+
+        // dd($followers);
+
+        return view('welcome')->with(['user' => $user, 'newInfo' => 'User']);
+        // return view('welcome')->withFollowers($followers)->withFollowing($following);
     }
-   
+
+
+    public function show($username) {
+        // dd($username);
+        $user =  \App\User::with('following', 'followers')->where('username', $username)->first();
+        
+        $followers = $user->followers;
+        $following = $user->following;
+
+        // dd($followers);
+
+        // return view('welcome')->with(['user' => $user, 'newInfo' => 'newvalue']);
+        return view('welcome', array('user' => $user, 'newInfo' => 'newwer'));
+        
+    }
+
+    // public
 }
