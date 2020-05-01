@@ -24,6 +24,24 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $user = \App\User:: paginate(5);
+        return view('home')->with('user',$user);
+    }
+
+    public function show($username) {
+        // dd($username);
+        $user =  User::with('following', 'followers')->where('username', $username)->first();
+        // dd($user)
+        // if(!$user){
+        //     return "not found";
+        // }
+        $followers = $user->followers;
+        $following = $user->following;
+        // dd($user);
+        // dd($followers);
+
+        // return view('welcome')->with(['user' => $user, 'newInfo' => 'newvalue']);
+        return view('home', array('user' => $user, 'newInfo' => 'newwer'));
+        
     }
 }

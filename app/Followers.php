@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 
-class Follower extends Model
+class Followers extends Model
 {
     //
     protected $fillable = [
@@ -13,6 +13,6 @@ class Follower extends Model
         'follower_id'
     ];
     public function user(){
-        return $this->belongsTo("App\User", 'follower_id');
+        return $this->belongsTo(User::class, 'follower_id');
     }
-}
+}   

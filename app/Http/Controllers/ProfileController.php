@@ -15,7 +15,7 @@ class ProfileController extends Controller
 
     public function index(){
         $user = auth()->user();
-        return view('profile')->with('user', $user);
+        return view('mainPages.profile')->with('user', $user);
     }
 
     public function show($user){

@@ -43,11 +43,11 @@ class User extends Authenticatable
     ];
 
     public function followers(){
-        return $this->hasMany(Follower::class, 'user_id');
+        return $this->hasMany(Followers::class, 'user_id');
     }
 
     public function following(){
-        return $this->hasMany(Follower::class, 'follower_id');
+        return $this->hasMany(Followers::class, 'follower_id');
     }
 
     public function posts(){
@@ -59,7 +59,7 @@ class User extends Authenticatable
         return $this->hasOne(Profile::class);
     }
 
-    public function follows(){
+    public function follows(User $user){
         return Followers::where('user_id', $user->id)->where('follower_id', auth()->user()->id)->first() ? true : false;
     }
 
